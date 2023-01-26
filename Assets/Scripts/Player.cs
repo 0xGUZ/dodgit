@@ -4,6 +4,9 @@ public class Player : MonoBehaviour
 {
     public float xMin = -2.4f;
     public float xMax = 2.4f;
+    
+    public GameObject gameController;
+
     Rigidbody2D rb;
 
     void Start()
@@ -37,6 +40,12 @@ public class Player : MonoBehaviour
             }
             xPos = Mathf.Clamp(xPos, xMin, xMax);
             rb.MovePosition(new Vector2(xPos, transform.position.y));
+        }
+    }
+
+    void OnTriggerEnter2D (Collider2D col) {
+        if (col.CompareTag("Meteor") == true) {
+            gameController.GetComponent<LevelControl>().Die();
         }
     }
 }

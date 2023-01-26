@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class MeteorSpawner : MonoBehaviour
+public class DecorationMeteorSpawner : MonoBehaviour
 {
     public GameObject meteorPrefab; // the meteor prefab to be spawned
-    public float spawnInterval = 0.9f; // interval between spawning meteors
+    private float spawnInterval = 1.4f; // interval between spawning meteors
     public float spawnDistance = 2.3f; // distance at which meteors spawn
 
     private float spawnTimer = 0.0f; // timer for spawning meteors
