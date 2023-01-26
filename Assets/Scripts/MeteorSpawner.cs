@@ -9,6 +9,7 @@ public class MeteorSpawner : MonoBehaviour
     private float spawnTimer = 0.0f; // timer for spawning meteors
     private float difficultyTimer = 0.0f; // timer for increasing difficulty
     private float difficultyInterval = 10.0f; // interval for increasing difficulty
+    private float difficultySpawnDelta = 0.1f; // amount of time that is reduced from spawn interval every difficulty change
 
     void Update()
     {
@@ -18,7 +19,9 @@ public class MeteorSpawner : MonoBehaviour
         if (difficultyTimer >= difficultyInterval)
         {
             difficultyTimer = 0.0f; // reset difficulty timer
-            spawnInterval -= 0.1f; // decrease spawn interval
+            if (spawnInterval -  difficultySpawnDelta >= 0){ // check for invalid spawnInterval
+                spawnInterval -= difficultySpawnDelta; // decrease spawn interval
+            }
         }
 
         if (spawnTimer >= spawnInterval)
