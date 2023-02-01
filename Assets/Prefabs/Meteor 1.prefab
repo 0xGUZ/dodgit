@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 1460774316737059174}
   - component: {fileID: 1322258708266217085}
   - component: {fileID: 2780878900204940413}
+  - component: {fileID: 2073182775297000796}
   - component: {fileID: 8980737035004711840}
   m_Layer: 0
-  m_Name: Decoration
-  m_TagString: Untagged
+  m_Name: Meteor 1
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3921091842044811924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,16 +130,16 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.9
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.3
+    widthMultiplier: 0.4
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0037879944
-        value: 0.5267849
+        time: 0
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -146,7 +147,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9961864
+        time: 0.8749986
         value: 0
         inSlope: 0
         outSlope: 0
@@ -159,15 +160,15 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 0, g: 0, b: 0, a: 1}
-      key2: {r: 0, g: 1, b: 0.5547881, a: 0}
+      key0: {r: 0, g: 1, b: 0.23263979, a: 1}
+      key1: {r: 0, g: 1, b: 0.23263979, a: 0}
+      key2: {r: 1, g: 0.61221385, b: 0, a: 0}
       key3: {r: 1, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 964
+      ctime0: 0
       ctime1: 65535
       ctime2: 65535
       ctime3: 65535
@@ -189,7 +190,7 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.1
@@ -210,12 +211,28 @@ Rigidbody2D:
   m_Mass: 0.3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.8
+  m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &2073182775297000796
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3921091842044811924}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997
 --- !u!114 &8980737035004711840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,4 +245,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af56cd3887a7954d8c7dcbefa6a8484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6

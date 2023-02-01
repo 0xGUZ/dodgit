@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cd99994cf7c3d0789df921b1a07ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorPrefab: {fileID: 3921091842044811924, guid: 587e792d441f86c539ad03aafc387f12, type: 3}
+  meteorPrefab: {fileID: 3921091842044811924, guid: 713d1389d53412ea58e8741557608b28, type: 3}
   spawnInterval: 0.7
   spawnDistance: 2.3
 --- !u!1 &1614387776

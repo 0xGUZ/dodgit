@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2780878900204940413}
   - component: {fileID: 8980737035004711840}
   m_Layer: 0
-  m_Name: Decoration
-  m_TagString: Untagged
+  m_Name: Meteor 3
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3921091842044811924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -159,8 +159,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 0, g: 0.6313722, b: 1, a: 1}
+      key1: {r: 0, g: 0.67209816, b: 1, a: 0}
       key2: {r: 0, g: 1, b: 0.5547881, a: 0}
       key3: {r: 1, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -168,7 +168,7 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 964
-      ctime1: 65535
+      ctime1: 27178
       ctime2: 65535
       ctime3: 65535
       ctime4: 0
@@ -184,7 +184,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 2
+      m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
