@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81bcb0230651768d49943994d0e47a3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af56cd3887a7954d8c7dcbefa6a8484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 6
 --- !u!96 &6526164191833443567
 TrailRenderer:
   serializedVersion: 2
@@ -210,7 +210,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.69803923, g: 0.23002306, b: 0.10196076, a: 1}
+      key0: {r: 1, g: 0.6213611, b: 0, a: 0.53333336}
       key1: {r: 0.69803923, g: 0.23002306, b: 0.10196076, a: 0}
       key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 1, g: 0, b: 0, a: 0}
