@@ -22,25 +22,25 @@ public class TitleAnimation : MonoBehaviour
         
         if(isGrowing == 1){
 
-            if(xPos >= 0.5f){
+            if(xPos >= 0.2f){
                 isGrowing = 0;
-                xPos -= 0.005f;
+                xPos -= 0.0005f;
             }
 
             else{
-                xPos += 0.005f;
+                xPos += 0.0005f;
             }
         }
 
         else {
 
-            if(xPos <= -0.5f){
+            if(xPos <= -0.2f){
                 isGrowing = 1;
-                xPos += 0.005f;
+                xPos += 0.0005f;
             }
         
             else{
-                xPos -= 0.005f;
+                xPos -= 0.0005f;
             }
         }
 

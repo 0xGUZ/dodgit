@@ -28,7 +28,7 @@ public class MeteorSpawner : MonoBehaviour
         {
             spawnTimer = 0.0f; // reset spawn timer
 
-            Vector3 spawnPosition = new Vector3(Random.Range(-spawnDistance, spawnDistance), 6, 0);
+            Vector3 spawnPosition = new Vector3(Random.Range(-spawnDistance, spawnDistance), 10, 0);
             Quaternion spawnRotation = Quaternion.identity;
             GameObject meteor = Instantiate(meteorPrefab, spawnPosition, spawnRotation);
             meteor.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 0), ForceMode2D.Impulse);
