@@ -3,7 +3,7 @@ using UnityEngine;
 public class MoveAndReposition : MonoBehaviour
 {
     private Camera mainCamera;
-    private float speed = 0.001f;
+    private float speed = 0.005f;
 
     private void Start()
     {

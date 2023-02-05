@@ -121,10 +121,12 @@ public class LevelControl : MonoBehaviour
 
         StartCoroutine(DecreaseAdsCounter());
 
-        PlayerPrefs.SetInt("score", 0); //reset score   
-
-
+        Invoke("ResetScore" , 6f);
         Invoke("ReloadScene", 6f);
+    }
+
+    public void ResetScore(){
+        PlayerPrefs.SetInt("score", 0); //reset score   
     }
 
     private IEnumerator DecreaseAdsCounter(){

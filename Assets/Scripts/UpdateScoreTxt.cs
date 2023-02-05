@@ -12,6 +12,6 @@ public class UpdateScoreTxt : MonoBehaviour
     
     void Update()
     {
-    	text.SetText(PlayerPrefs.GetInt("score", 0).ToString());    
+    	text.SetText(PlayerPrefs.GetInt("score", 1).ToString());    
     }
 }
