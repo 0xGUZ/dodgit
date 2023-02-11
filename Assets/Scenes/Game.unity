@@ -7225,8 +7225,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6067731ef93155440a9b4ee307b6944a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -2.4
-  xMax: 2.4
+  xMin: -2.1
+  xMax: 2.1
+  moveSpeed: 1
+  stamina: 600
+  stopCostPerSecond: 100
+  recoverStaminaPerSecond: 150
   gameController: {fileID: 1396949358}
 --- !u!61 &633017123
 BoxCollider2D:
