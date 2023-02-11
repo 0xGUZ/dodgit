@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public float xMin = -2.1f;
     public float xMax = 2.1f;
-    public float moveSpeed = 1f;
+    public float speed = 0.02f;
     public float stamina = 600f;
     public float stopCostPerSecond = 100f;
     public float recoverStaminaPerSecond = 150f;
@@ -13,16 +13,16 @@ public class Player : MonoBehaviour
 
     public GameObject gameController;
 
-    private Vector3 touchPos;
-    private Rigidbody2D rb;
-    private Vector3 direction;
+    private int isGrowing;
+    private float xPos;
+    private float originalPos;
     private bool isMoving = true;
     private float timeSinceStopped = 0f;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        direction = Vector2.right;
+        originalPos = transform.position.x;
+        isGrowing = 1;
     }
 
     void Update()
@@ -38,8 +38,33 @@ public class Player : MonoBehaviour
 
     private void MoveBackAndForth()
     {
-        float lerpValue = Mathf.PingPong(Time.time * moveSpeed, 1);
-        transform.position = new Vector2(Mathf.Lerp(xMin, xMax, lerpValue), transform.position.y);
+        xPos = transform.position.x - originalPos;
+        
+        if(isGrowing == 1){
+
+            if(xPos >= xMax){
+                isGrowing = 0;
+                xPos -= speed;
+            }
+
+            else{
+                xPos +=speed;
+            }
+        }
+
+        else {
+
+            if(xPos <= xMin){
+                isGrowing = 1;
+                xPos += speed;
+            }
+        
+            else{
+                xPos -= speed;
+            }
+        }
+
+        transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
     }
 
     private void HandleTouchInput()
