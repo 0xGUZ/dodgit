@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float xMin = -2.1f;
-    public float xMax = 2.1f;
-    public float speed = 0.02f;
-    public float stamina = 600f;
+    private float xMin = -2.1f;
+    private float xMax = 2.1f;
+    private float speed = 0.08f;
+    public float stamina = 500f;
     public float stopCostPerSecond = 100f;
     public float recoverStaminaPerSecond = 150f;
     public Image staminaBar;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        HandleTouchInput();
+        HandleKeyInput();
 
         if(isMoving){
             MoveBackAndForth();
@@ -70,25 +70,27 @@ public class Player : MonoBehaviour
     private void HandleTouchInput()
     {
         // Stop movement
-        if (Input.touchCount > 0)
+        if ((Input.touchCount > 0))
         {
-            Debug.Log("is touching");
-            Touch touch = Input.GetTouch(0);
-
+        
             // Stop player if touching and there is enough stamina
-            if (touch.phase == TouchPhase.Began)
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 if (stamina >= stopCostPerSecond)
                 {
-                    
                     Time.timeScale = 0.8f;
                     isMoving = false;
                     timeSinceStopped = 0f;
                 }
+
+                else {
+                    Time.timeScale = 1f;
+                    isMoving = true;
+                }
             }
 
             // Start moving again if touch ends
-            if (touch.phase == TouchPhase.Ended)
+            if (Input.GetTouch(0).phase == TouchPhase.Ended)
             {
                 isMoving = true;
                 Time.timeScale = 1f;
@@ -96,6 +98,28 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void HandleKeyInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+
+            if (stamina >= stopCostPerSecond)
+            {
+                Time.timeScale = 0.8f;
+                isMoving = false;
+                timeSinceStopped = 0f;
+            }
+
+            else {
+                Time.timeScale = 1f;
+                isMoving = true;
+            }
+        }
+
+        isMoving = true;
+        Time.timeScale = 1f;
+    }
+    
     private void UpdateStamina()
     {
         // Reduce stamina if player is stopped
