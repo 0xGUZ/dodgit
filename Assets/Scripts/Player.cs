@@ -29,11 +29,11 @@ public class Player : MonoBehaviour
     {
         HandleKeyInput();
 
+        UpdateStamina();
+
         if(isMoving){
             MoveBackAndForth();
-        }
-        
-        UpdateStamina();
+        }        
     }
 
     private void MoveBackAndForth()
@@ -100,24 +100,24 @@ public class Player : MonoBehaviour
 
     private void HandleKeyInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKey(KeyCode.Space) && (stamina >= stopCostPerSecond)) 
         {
+            Time.timeScale = 0.8f;
+            isMoving = false;
+            timeSinceStopped = 0f;
+        }           
 
-            if (stamina >= stopCostPerSecond)
-            {
-                Time.timeScale = 0.8f;
-                isMoving = false;
-                timeSinceStopped = 0f;
-            }
-
-            else {
-                Time.timeScale = 1f;
-                isMoving = true;
-            }
+        else if(Input.GetKeyUp(KeyCode.Space) || (stamina <= stopCostPerSecond)) 
+        {
+           Time.timeScale = 1f;
+           isMoving = true;
         }
 
-        isMoving = true;
-        Time.timeScale = 1f;
+        else 
+        {
+            Time.timeScale = 1f;
+            isMoving = true;
+        }
     }
     
     private void UpdateStamina()
