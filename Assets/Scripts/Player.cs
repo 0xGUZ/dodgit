@@ -6,9 +6,9 @@ public class Player : MonoBehaviour
     private float xMin = -2.1f;
     private float xMax = 2.1f;
     private float speed = 0.08f;
-    public float stamina = 500f;
-    public float stopCostPerSecond = 100f;
-    public float recoverStaminaPerSecond = 150f;
+    private float stamina = 500f;
+    private float stopCostPerSecond = 100f;
+    private float recoverStaminaPerSecond = 100f;
     public Image staminaBar;
 
     public GameObject gameController;
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && (stamina >= stopCostPerSecond)) 
         {
-            Time.timeScale = 0.8f;
+            Time.timeScale = 0.7f;
             isMoving = false;
             timeSinceStopped = 0f;
         }           
@@ -136,8 +136,8 @@ public class Player : MonoBehaviour
         }
 
         // Clamp stamina value
-        stamina = Mathf.Clamp(stamina, 0, 600f);
-        staminaBar.fillAmount = stamina/600;
+        stamina = Mathf.Clamp(stamina, 0, 500f);
+        staminaBar.fillAmount = stamina/500;
     }
 
     //call die function if meteor hits player
