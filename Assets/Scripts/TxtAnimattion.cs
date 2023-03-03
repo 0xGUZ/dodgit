@@ -10,7 +10,7 @@ public class TxtAnimattion : MonoBehaviour
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        size = 90.0f;
+        size = 80.0f;
         text.fontSize = size;
         isGrowing = 1;
     }

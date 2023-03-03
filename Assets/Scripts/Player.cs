@@ -3,9 +3,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    private float xMin = -2.1f;
-    private float xMax = 2.1f;
-    private float speed = 0.08f;
+    private float speed = 4f;
     private float stamina = 500f;
     private float stopCostPerSecond = 100f;
     private float recoverStaminaPerSecond = 100f;
@@ -37,35 +35,40 @@ public class Player : MonoBehaviour
         }        
     }
 
+    public float movementRangeMultiplier = 0.4f;
+
     private void MoveBackAndForth()
     {
-        xPos = transform.position.x - originalPos;
-        
+        // Calculate movement range based on screen size
+        float cameraHeight = Camera.main.orthographicSize * 2.0f;
+        float cameraWidth = cameraHeight * Camera.main.aspect;
+        float movementRange = cameraWidth * movementRangeMultiplier;
+
+        // Calculate current x position and movement limits
+        float xPos = transform.position.x - originalPos;
+        float xMax = originalPos + movementRange;
+        float xMin = originalPos - movementRange;
+
+        // Move the object back and forth
         if(isGrowing == 1){
 
             if(xPos >= xMax){
                 isGrowing = 0;
-                xPos -= speed;
             }
 
-            else{
-                xPos +=speed;
-            }
+            xPos += speed * Time.deltaTime;
         }
 
         else {
 
             if(xPos <= xMin){
                 isGrowing = 1;
-                xPos += speed;
             }
-        
-            else{
-                xPos -= speed;
-            }
+
+            xPos -= speed * Time.deltaTime;
         }
 
-        transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+        transform.position = new Vector3(xPos + originalPos, transform.position.y, transform.position.z);
     }
 
     private void HandleTouchInput()
