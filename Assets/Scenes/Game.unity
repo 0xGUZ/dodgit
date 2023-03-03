@@ -7225,12 +7225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6067731ef93155440a9b4ee307b6944a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -2.1
-  xMax: 2.1
-  speed: 0.02
-  stamina: 1000
-  stopCostPerSecond: 100
-  recoverStaminaPerSecond: 150
   staminaBar: {fileID: 1054705960}
   gameController: {fileID: 1396949358}
 --- !u!61 &633017123
@@ -12722,7 +12716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TRY AGAIN
+  m_text: CONTINUE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12832,11 +12826,11 @@ RectTransform:
   m_Father: {fileID: 1796567049}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1243}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1054705960
 MonoBehaviour:
   m_ObjectHideFlags: 0
