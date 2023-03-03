@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         }        
     }
 
-    public float movementRangeMultiplier = 0.4f;
+    public float movementRangeMultiplier = 0.5f;
 
     private void MoveBackAndForth()
     {
@@ -50,25 +50,24 @@ public class Player : MonoBehaviour
         float xMin = originalPos - movementRange;
 
         // Move the object back and forth
-        if(isGrowing == 1){
-
-            if(xPos >= xMax){
+        if (isGrowing == 1)
+        {
+            if (xPos >= xMax)
+            {
                 isGrowing = 0;
             }
 
-            xPos += speed * Time.deltaTime;
+            transform.Translate(speed * Time.deltaTime, 0, 0);
         }
-
-        else {
-
-            if(xPos <= xMin){
+        else
+        {
+            if (xPos <= xMin)
+            {
                 isGrowing = 1;
             }
 
-            xPos -= speed * Time.deltaTime;
+            transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
-
-        transform.position = new Vector3(xPos + originalPos, transform.position.y, transform.position.z);
     }
 
     private void HandleTouchInput()
