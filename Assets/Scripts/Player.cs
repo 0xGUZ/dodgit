@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        HandleTouchInput();
         HandleKeyInput();
 
         UpdateStamina();
@@ -69,34 +70,20 @@ public class Player : MonoBehaviour
 
     private void HandleTouchInput()
     {
-        // Stop movement
-        if ((Input.touchCount > 0))
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && (stamina >= stopCostPerSecond))
         {
-        
-            // Stop player if touching and there is enough stamina
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                if (stamina >= stopCostPerSecond)
-                {
-                    Time.timeScale = 0.8f;
-                    isMoving = false;
-                    timeSinceStopped = 0f;
-                }
+            Time.timeScale = 0.7f;
+            isMoving = false;
+            timeSinceStopped = 0f;
+        }
 
-                else {
-                    Time.timeScale = 1f;
-                    isMoving = true;
-                }
-            }
-
-            // Start moving again if touch ends
-            if (Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                isMoving = true;
-                Time.timeScale = 1f;
-            }
+        else 
+        {
+            Time.timeScale = 1f;
+            isMoving = true;
         }
     }
+
 
     private void HandleKeyInput()
     {
@@ -106,12 +93,6 @@ public class Player : MonoBehaviour
             isMoving = false;
             timeSinceStopped = 0f;
         }           
-
-        else if(Input.GetKeyUp(KeyCode.Space) || (stamina <= stopCostPerSecond)) 
-        {
-           Time.timeScale = 1f;
-           isMoving = true;
-        }
 
         else 
         {
@@ -133,11 +114,11 @@ public class Player : MonoBehaviour
         else
         {
             stamina += recoverStaminaPerSecond * Time.deltaTime;
-        }
+        }  
 
         // Clamp stamina value
         stamina = Mathf.Clamp(stamina, 0, 500f);
-        staminaBar.fillAmount = stamina/500;
+        staminaBar.fillAmount = (stamina-100) / 400;
     }
 
     //call die function if meteor hits player
